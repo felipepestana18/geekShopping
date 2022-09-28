@@ -47,7 +47,7 @@ namespace GeekShooping.ProductAPI.Controllers
         {
             if (vo == null)
                 return BadRequest();
-            var product = await _repository.Create(vo);
+            var product = await _repository.Update(vo);
             return Ok(product);
 
 
