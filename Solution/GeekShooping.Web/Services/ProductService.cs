@@ -4,7 +4,7 @@ using GeekShooping.Web.Utils;
 
 namespace GeekShooping.Web.Services
 {
-    public class ProductService : IProductServices
+    public class ProductService : IProductService
     {
 
         private readonly HttpClient _client;

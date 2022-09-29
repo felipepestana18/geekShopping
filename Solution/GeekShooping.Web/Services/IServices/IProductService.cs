@@ -2,7 +2,7 @@
 
 namespace GeekShooping.Web.Services.IServices
 {
-    public interface IProductServices
+    public interface IProductService
     {
         Task<IEnumerable<ProductModel>> FindAllProducts();
 
