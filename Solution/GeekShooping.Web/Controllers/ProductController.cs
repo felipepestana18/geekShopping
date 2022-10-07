@@ -14,6 +14,7 @@ namespace GeekShooping.Web.Controllers
             _productService = productService ?? throw new ArgumentNullException(nameof(productService));
         }
 
+
         public async Task<IActionResult> ProductIndex()
         {
             var products = await _productService.FindAllProducts();
@@ -21,18 +22,17 @@ namespace GeekShooping.Web.Controllers
         }
         public async Task<IActionResult> ProductCreate()
         {
-    
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> ProductCreate(ProductModel model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-
                 var response = await _productService.CreateProduct(model);
-                if (response != null) return RedirectToAction(nameof(ProductIndex));
-
+                if (response != null) return RedirectToAction(
+                     nameof(ProductIndex));
             }
             return View(model);
         }
