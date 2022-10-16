@@ -1,4 +1,5 @@
 using GeekShooping.IdentityServer.Configuration;
+using GeekShooping.IdentityServer.Initializer;
 using GeekShooping.IdentityServer.Model;
 using GeekShooping.IdentityServer.Model.Context;
 using Microsoft.AspNetCore.Identity;
@@ -27,13 +28,19 @@ var identityBuilder = builder.Services.AddIdentityServer(options =>
   .AddInMemoryClients(IdentityConfiguration.Clients)
   .AddAspNetIdentity<ApplicationUser>();
 
+// adicionado depois que DbIntializer foi criado
+builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 identityBuilder.AddDeveloperSigningCredential();
 
 var app = builder.Build();
 
+// adicionado depois que DbIntializer foi criado
+IDbInitializer dbInitializer = app.Services.GetRequiredService<IDbInitializer>();
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
+
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
@@ -46,6 +53,10 @@ app.UseRouting();
 // Identity Server
 app.UseIdentityServer();
 app.UseAuthorization();
+
+dbInitializer.Initializer();
+
+
 
 app.MapControllerRoute(
     name: "default",
