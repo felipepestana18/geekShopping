@@ -24,3 +24,11 @@ C:\curso\GeekShooping\Solution\GeekShooping.Web\obj\Debug\net6.0\refint\GeekShoo
 C:\curso\GeekShooping\Solution\GeekShooping.Web\obj\Debug\net6.0\GeekShooping.Web.pdb
 C:\curso\GeekShooping\Solution\GeekShooping.Web\obj\Debug\net6.0\GeekShooping.Web.genruntimeconfig.cache
 C:\curso\GeekShooping\Solution\GeekShooping.Web\obj\Debug\net6.0\ref\GeekShooping.Web.dll
+C:\curso\GeekShooping\Solution\GeekShooping.Web\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\curso\GeekShooping\Solution\GeekShooping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\curso\GeekShooping\Solution\GeekShooping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\curso\GeekShooping\Solution\GeekShooping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\curso\GeekShooping\Solution\GeekShooping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\curso\GeekShooping\Solution\GeekShooping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\curso\GeekShooping\Solution\GeekShooping.Web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\curso\GeekShooping\Solution\GeekShooping.Web\obj\Debug\net6.0\GeekShooping.Web.csproj.CopyComplete
