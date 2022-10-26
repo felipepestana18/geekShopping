@@ -35,7 +35,7 @@ identityBuilder.AddDeveloperSigningCredential();
 var app = builder.Build();
 
 // adicionado depois que DbIntializer foi criado
-IDbInitializer dbInitializer = app.Services.GetRequiredService<IDbInitializer>();
+var dbInitializer = app.Services.CreateScope().ServiceProvider.GetService<IDbInitializer>();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -54,12 +54,11 @@ app.UseRouting();
 app.UseIdentityServer();
 app.UseAuthorization();
 
-dbInitializer.Initializer();
-
-
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+dbInitializer.Initializer();
 
 app.Run();

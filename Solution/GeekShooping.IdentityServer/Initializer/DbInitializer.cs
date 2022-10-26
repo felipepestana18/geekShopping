@@ -30,51 +30,51 @@ namespace GeekShooping.IdentityServer.Initializer
 
             //verificando  se tem usuário como admim se não tiver eu não precisar persistir os dados porque já tem
             if (_role.FindByNameAsync(IdentityConfiguration.Admin).Result != null) return;
-            _role.CreateAsync(new IdentityRole(IdentityConfiguration.Admin)).GetAwaiter().GetResult();
-            _role.CreateAsync(new IdentityRole(IdentityConfiguration.Admin)).GetAwaiter().GetResult();
+            _role.CreateAsync(new IdentityRole(
+                IdentityConfiguration.Admin)).GetAwaiter().GetResult();
+            _role.CreateAsync(new IdentityRole(
+                IdentityConfiguration.Client)).GetAwaiter().GetResult();
 
             ApplicationUser admin = new ApplicationUser()
             {
                 UserName = "felipe-admin",
-                Email = "felipe-27@hotmail.com",
+                Email = "felipe-admin@hotmail.com.br",
                 EmailConfirmed = true,
-                PhoneNumber = "17 98120-5099",
+                PhoneNumber = "+55 (17) 12345-6789",
                 FirstName = "Felipe",
                 LastName = "Admin"
             };
 
-            _user.CreateAsync(admin, "Felpe123$").GetAwaiter().GetResult();
-            _user.AddToRoleAsync(admin, IdentityConfiguration.Admin).GetAwaiter().GetResult();
-
-
-            var adminClaims = _user.AddClaimsAsync(admin, new Claim[] {
-
-                new Claim(JwtClaimTypes.Name, $"{admin.FirstName} ${admin.LastName}"),
+            _user.CreateAsync(admin, "Erudio123$").GetAwaiter().GetResult();
+            _user.AddToRoleAsync(admin,
+                IdentityConfiguration.Admin).GetAwaiter().GetResult();
+            var adminClaims = _user.AddClaimsAsync(admin, new Claim[]
+            {
+                new Claim(JwtClaimTypes.Name, $"{admin.FirstName} {admin.LastName}"),
                 new Claim(JwtClaimTypes.GivenName, admin.FirstName),
                 new Claim(JwtClaimTypes.FamilyName, admin.LastName),
-                new Claim(JwtClaimTypes.Role, IdentityConfiguration.Admin),
+                new Claim(JwtClaimTypes.Role, IdentityConfiguration.Admin)
             }).Result;
 
             ApplicationUser client = new ApplicationUser()
             {
                 UserName = "felipe-client",
-                Email = "felipe-27@hotmail.com",
+                Email = "felipe-client@hotmail.com.br",
                 EmailConfirmed = true,
-                PhoneNumber = "17 98120-5099",
+                PhoneNumber = "+55 (17) 12345-6789",
                 FirstName = "Felipe",
                 LastName = "Client"
             };
 
-            _user.CreateAsync(client, "Felpe123$").GetAwaiter().GetResult();
-            _user.AddToRoleAsync(client, IdentityConfiguration.Client).GetAwaiter().GetResult();
-
-
-            var clientClaims = _user.AddClaimsAsync(client, new Claim[] {
-
-                new Claim(JwtClaimTypes.Name, $"{client.FirstName} ${client.LastName}"),
+            _user.CreateAsync(client, "Felipe123$").GetAwaiter().GetResult();
+            _user.AddToRoleAsync(client,
+                IdentityConfiguration.Client).GetAwaiter().GetResult();
+            var clientClaims = _user.AddClaimsAsync(client, new Claim[]
+            {
+                new Claim(JwtClaimTypes.Name, $"{client.FirstName} {client.LastName}"),
                 new Claim(JwtClaimTypes.GivenName, client.FirstName),
                 new Claim(JwtClaimTypes.FamilyName, client.LastName),
-                new Claim(JwtClaimTypes.Role, IdentityConfiguration.Client),
+                new Claim(JwtClaimTypes.Role, IdentityConfiguration.Client)
             }).Result;
         }
     }
