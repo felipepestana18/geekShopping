@@ -41,14 +41,14 @@ namespace GeekShooping.IdentityServer.Configuration
             },
             new Client
             {
-                ClientId = "geek_shooping",
+                ClientId = "geek_shopping",
                 ClientSecrets = {new Secret("my_super_secret".Sha256())},
                 AllowedGrantTypes = GrantTypes.Code,
                 // Redireciona a tela de Lagou out Login
                 // Para pegar a URL front-end GeekShooping.Wev Propeties laucnSettings.json
                 // Adiocionar /signin-oidc e /sigout-callback-oidc
                 RedirectUris = {"https://localhost:4430/signin-oidc"},
-                PostLogoutRedirectUris = { "http://localhost:4430/signout-callback-oidc" },
+                PostLogoutRedirectUris = {"https://localhost:4430/signout-callback-oidc"},
                 AllowedScopes = new List<string>
                 {
                     IdentityServerConstants.StandardScopes.OpenId,

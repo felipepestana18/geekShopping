@@ -52,3 +52,4 @@ C:\curso\GeekShooping\Solution\GeekShooping.IdentityServer\obj\Debug\net6.0\Geek
 C:\curso\GeekShooping\Solution\GeekShooping.IdentityServer\obj\Debug\net6.0\ref\GeekShooping.IdentityServer.dll
 C:\curso\GeekShooping\Solution\GeekShooping.IdentityServer\bin\Debug\net6.0\Humanizer.dll
 C:\curso\GeekShooping\Solution\GeekShooping.IdentityServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\curso\GeekShooping\Solution\GeekShooping.IdentityServer\bin\Debug\net6.0\keys\is-signing-key-37A70AE2F22381D7447AF44A467922A2.json
