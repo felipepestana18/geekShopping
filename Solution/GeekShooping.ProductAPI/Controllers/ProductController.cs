@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GeekShooping.ProductAPI.Controllers
 {
     [Route("api/v1/[controller]")]
+    [ApiController]
     public class ProductController : ControllerBase
     {
 
@@ -19,7 +20,7 @@ namespace GeekShooping.ProductAPI.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        // [Authorize] permitindo que o usuário consiga ver o find all
         public async Task<ActionResult<IEnumerable<ProductVO>>> FindAll()
         {
             var product = await _repository.FindAll();

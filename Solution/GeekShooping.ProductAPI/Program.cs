@@ -24,8 +24,8 @@ builder.Services.AddControllers();
 
 // adicionando depois que identity server estive pronto
 
-builder.Services.AddAuthentication("Bearear")
-    .AddJwtBearer(options =>
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
     {
         //pegar a url no projeto identity server 
         options.Authority = "https://localhost:4435";

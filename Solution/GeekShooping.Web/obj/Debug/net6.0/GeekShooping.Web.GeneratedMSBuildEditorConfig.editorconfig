@@ -5,60 +5,65 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GeekShooping.Web
 build_property.RootNamespace = GeekShooping.Web
-build_property.ProjectDir = C:\curso\GeekShooping\Solution\GeekShooping.Web\
+build_property.ProjectDir = C:\Projetos\geekShopping\Solution\GeekShooping.Web\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\curso\GeekShooping\Solution\GeekShooping.Web
+build_property.MSBuildProjectDirectory = C:\Projetos\geekShopping\Solution\GeekShooping.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/curso/GeekShooping/Solution/GeekShooping.Web/Views/Home/Index.cshtml]
+[C:/Projetos/geekShopping/Solution/GeekShooping.Web/Views/Home/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projetos/geekShopping/Solution/GeekShooping.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/curso/GeekShooping/Solution/GeekShooping.Web/Views/Home/Privacy.cshtml]
+[C:/Projetos/geekShopping/Solution/GeekShooping.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/curso/GeekShooping/Solution/GeekShooping.Web/Views/Product/ProductCreate.cshtml]
+[C:/Projetos/geekShopping/Solution/GeekShooping.Web/Views/Product/ProductCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0Q3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/curso/GeekShooping/Solution/GeekShooping.Web/Views/Product/ProductDelete.cshtml]
+[C:/Projetos/geekShopping/Solution/GeekShooping.Web/Views/Product/ProductDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0RGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/curso/GeekShooping/Solution/GeekShooping.Web/Views/Product/ProductIndex.cshtml]
+[C:/Projetos/geekShopping/Solution/GeekShooping.Web/Views/Product/ProductIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0SW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/curso/GeekShooping/Solution/GeekShooping.Web/Views/Product/ProductUpdate.cshtml]
+[C:/Projetos/geekShopping/Solution/GeekShooping.Web/Views/Product/ProductUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0VXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/curso/GeekShooping/Solution/GeekShooping.Web/Views/Shared/Error.cshtml]
+[C:/Projetos/geekShopping/Solution/GeekShooping.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/curso/GeekShooping/Solution/GeekShooping.Web/Views/Shared/_LoginPartial.cshtml]
+[C:/Projetos/geekShopping/Solution/GeekShooping.Web/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/curso/GeekShooping/Solution/GeekShooping.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Projetos/geekShopping/Solution/GeekShooping.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/curso/GeekShooping/Solution/GeekShooping.Web/Views/_ViewImports.cshtml]
+[C:/Projetos/geekShopping/Solution/GeekShooping.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/curso/GeekShooping/Solution/GeekShooping.Web/Views/_ViewStart.cshtml]
+[C:/Projetos/geekShopping/Solution/GeekShooping.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/curso/GeekShooping/Solution/GeekShooping.Web/Views/Shared/_Layout.cshtml]
+[C:/Projetos/geekShopping/Solution/GeekShooping.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-9gonjx2rto

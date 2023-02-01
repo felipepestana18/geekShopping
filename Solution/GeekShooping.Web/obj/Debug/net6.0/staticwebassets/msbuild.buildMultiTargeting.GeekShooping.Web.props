@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\GeekShooping.Web.props" />
+</Project>

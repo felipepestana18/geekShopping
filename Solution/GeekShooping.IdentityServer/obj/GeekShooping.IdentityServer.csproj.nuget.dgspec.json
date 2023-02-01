@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\curso\\GeekShooping\\Solution\\GeekShooping.IdentityServer\\GeekShooping.IdentityServer.csproj": {}
+    "C:\\Projetos\\geekShopping\\Solution\\GeekShooping.IdentityServer\\GeekShooping.IdentityServer.csproj": {}
   },
   "projects": {
-    "C:\\curso\\GeekShooping\\Solution\\GeekShooping.IdentityServer\\GeekShooping.IdentityServer.csproj": {
+    "C:\\Projetos\\geekShopping\\Solution\\GeekShooping.IdentityServer\\GeekShooping.IdentityServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\curso\\GeekShooping\\Solution\\GeekShooping.IdentityServer\\GeekShooping.IdentityServer.csproj",
+        "projectUniqueName": "C:\\Projetos\\geekShopping\\Solution\\GeekShooping.IdentityServer\\GeekShooping.IdentityServer.csproj",
         "projectName": "GeekShooping.IdentityServer",
-        "projectPath": "C:\\curso\\GeekShooping\\Solution\\GeekShooping.IdentityServer\\GeekShooping.IdentityServer.csproj",
-        "packagesPath": "C:\\Users\\FELIPEDASILVAPESTANA\\.nuget\\packages\\",
-        "outputPath": "C:\\curso\\GeekShooping\\Solution\\GeekShooping.IdentityServer\\obj\\",
+        "projectPath": "C:\\Projetos\\geekShopping\\Solution\\GeekShooping.IdentityServer\\GeekShooping.IdentityServer.csproj",
+        "packagesPath": "C:\\Users\\Pichau\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\geekShopping\\Solution\\GeekShooping.IdentityServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\FELIPEDASILVAPESTANA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Pichau\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -84,7 +83,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
