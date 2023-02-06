@@ -9,6 +9,7 @@ builder.Services.AddControllersWithViews();
 
 //adicionado o http cliente
 builder.Services.AddHttpClient<IProductService, ProductService>(c => c.BaseAddress = new Uri(builder.Configuration["ServiceUrls:ProductAPI"]));
+builder.Services.AddHttpClient<ICartService, CartService>(c => c.BaseAddress = new Uri(builder.Configuration["ServiceUrls:CartApi"]));
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = "Cookies";

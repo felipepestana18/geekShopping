@@ -19,14 +19,14 @@ namespace GeekShooping.CartApi.Controllers
 
         [HttpGet("find-cart/{{id}}")]
         // [Authorize] permitindo que o usuário consiga ver o find all
-        public async Task<ActionResult<IEnumerable<CartVO>>> FindById(string userId)
+        public async Task<ActionResult<IEnumerable<CartVO>>> FindById(string id)
         {
-            var cart = await _repository.FindCartByUserId(userId);
+            var cart = await _repository.FindCartByUserId(id);
             return Ok(cart);
 
         }
 
-        [HttpPost("add-cart/{{id}}")]
+        [HttpPost("add-cart")]
         public async Task<ActionResult<IEnumerable<CartVO>>> AddCart(CartVO vo)
         {
             var cart = await _repository.SaveOrUpdateCart(vo);
@@ -34,7 +34,7 @@ namespace GeekShooping.CartApi.Controllers
             return Ok(cart);
 
         }
-        [HttpPut("update-cart/{{id}}")]
+        [HttpPut("update-cart")]
         public async Task<ActionResult<IEnumerable<CartVO>>> UpdateCART(CartVO vo)
         {
             var cart = await _repository.SaveOrUpdateCart(vo);

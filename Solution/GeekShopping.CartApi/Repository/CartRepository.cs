@@ -118,12 +118,12 @@ namespace GeekShooping.CartApi.Model.Repository
             else
             {
                 // verificando se tem cart detail
-                var cartDetail = await _context.CartDetails.AsNoTracking().FirstOrDefaultAsync(p => p.ProductId == vo.CartDetails.FirstOrDefault().ProductId &&
+                var cartDetail = await _context.CartDetails.AsNoTracking().FirstOrDefaultAsync(p => p.ProductId == cart.CartDetails.FirstOrDefault().ProductId &&
                 p.CartHeaderId == cartHeader.Id);
 
                 if (cartDetail == null)
                 {
-                    cart.CartDetails.FirstOrDefault().CartHeaderId = cart.CartHeader.Id;
+                    cart.CartDetails.FirstOrDefault().CartHeaderId = cartHeader.Id;
                     // já foi salvo lá em cima por isso que não é necessário salvar duas vezes, se não vai dar conflito
                     cart.CartDetails.FirstOrDefault().Product = null;
 
