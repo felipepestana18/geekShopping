@@ -7,6 +7,8 @@ namespace GeekShooping.CartApi.Data.ValueObjects
 
         // muitos para muitos
         // sempre é necessário criar o Id e o Tipo nome da Classe para enitty framwork
+        public long Id { get; set; }
+
         public long CartHeaderId { get; set; }
         public CartHeaderVO CartHeader { get; set; }
 

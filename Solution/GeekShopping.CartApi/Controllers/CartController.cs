@@ -13,43 +13,40 @@ namespace GeekShooping.CartApi.Controllers
 
         public CartController(ICartRepository repository)
         {
-            _repository = repository ?? throw new ArgumentException(nameof(repository));
-
+            _repository = repository ?? throw new
+                ArgumentNullException(nameof(repository));
         }
 
-        [HttpGet("find-cart/{{id}}")]
-        // [Authorize] permitindo que o usuário consiga ver o find all
-        public async Task<ActionResult<IEnumerable<CartVO>>> FindById(string id)
+        [HttpGet("find-cart/{id}")]
+        public async Task<ActionResult<CartVO>> FindById(string id)
         {
             var cart = await _repository.FindCartByUserId(id);
+            if (cart == null) return NotFound();
             return Ok(cart);
-
         }
 
         [HttpPost("add-cart")]
-        public async Task<ActionResult<IEnumerable<CartVO>>> AddCart(CartVO vo)
+        public async Task<ActionResult<CartVO>> AddCart([FromBody] CartVO vo)
         {
             var cart = await _repository.SaveOrUpdateCart(vo);
-            if (cart != null) return NotFound();
+            if (cart == null) return NotFound();
             return Ok(cart);
-
         }
+
         [HttpPut("update-cart")]
-        public async Task<ActionResult<IEnumerable<CartVO>>> UpdateCART(CartVO vo)
+        public async Task<ActionResult<CartVO>> UpdateCart(CartVO vo)
         {
             var cart = await _repository.SaveOrUpdateCart(vo);
-            if (cart != null) return NotFound();
+            if (cart == null) return NotFound();
             return Ok(cart);
-
         }
-        [HttpDelete("remove-cart/{{id}}")]
 
-        public async Task<ActionResult<IEnumerable<CartVO>>> RemoveCARD(int id)
+        [HttpDelete("remove-cart/{id}")]
+        public async Task<ActionResult<CartVO>> RemoveCart(int id)
         {
-            bool status = await _repository.RemoveFromCart(id);
+            var status = await _repository.RemoveFromCart(id);
             if (!status) return BadRequest();
             return Ok(status);
-
         }
 
     }

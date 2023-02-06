@@ -13,6 +13,11 @@ namespace GeekShooping.Web.Services
         public const string BasePath = "api/v1/cart";
 
 
+        public CartService(HttpClient client)
+        {
+            _client = client ?? throw new ArgumentException(nameof(client));
+        }
+
         public async Task<CartViewModel> FindCartByUserId(string userId, string token)
         {
             // quando estive pronto o identity server eu utilizo o token para seta no header do cabecalho
@@ -24,8 +29,9 @@ namespace GeekShooping.Web.Services
 
         public async Task<CartViewModel> AddItemToCart(CartViewModel model, string token)
         {
+
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            var response = await _client.PostAsJson($"{BasePath}/find-cart", model);
+            var response = await _client.PostAsJson($"{BasePath}/add-cart", model);
             if (response.IsSuccessStatusCode)
                 return await response.ReadContentAs<CartViewModel>();
             else throw new Exception("Something went wrong when calling api");

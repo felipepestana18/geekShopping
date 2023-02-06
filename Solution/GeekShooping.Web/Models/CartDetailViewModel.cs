@@ -7,6 +7,8 @@ namespace GeekShooping.Web.Models
 
         // muitos para muitos
         // sempre é necessário criar o Id e o Tipo nome da Classe para enitty framwork
+        public long Id { get; set; }
+
         public long CartHeaderId { get; set; }
         public CartHeaderViewModel CartHeader { get; set; }
 

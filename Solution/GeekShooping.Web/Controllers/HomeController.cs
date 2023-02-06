@@ -13,11 +13,12 @@ namespace GeekShooping.Web.Controllers
         private readonly IProductService _productService;
         private readonly ICartService _cartService;
 
-        public HomeController(ILogger<HomeController> logger, IProductService productService, ICartService _cartService)
+        public HomeController(ILogger<HomeController> logger, IProductService productService, ICartService cartService)
         {
             // fazendo a ineção de indenpedencia
             _logger = logger;
             _productService = productService;
+            _cartService = cartService;
         }
 
         public async Task<IActionResult> Index()
@@ -56,12 +57,13 @@ namespace GeekShooping.Web.Controllers
             {
                 Count = model.Count,
                 ProductId = model.Id,
-                // RECUPERANDO O PRODUCT ATRAVÉS DO ID
+                CartHeader = cart.CartHeader,
                 Product = await _productService.FindProductById(model.Id, token)
             };
 
             List<CartDetailViewModel> cartDetails = new List<CartDetailViewModel>();
             cartDetails.Add(cartDetail);
+            cart.CartDetails = cartDetails; 
 
             var response = await _cartService.AddItemToCart(cart, token);
             if(response != null)
