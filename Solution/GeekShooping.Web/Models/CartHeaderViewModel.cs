@@ -11,7 +11,7 @@ namespace GeekShooping.Web.Models
 
         public string CouponCode { get; set; } = "1";
 
-        public double PurchaseAmount{ get;set;}
+        public decimal PurchaseAmount{ get;set;}
 
     }
 }
