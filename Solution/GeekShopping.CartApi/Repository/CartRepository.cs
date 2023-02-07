@@ -52,10 +52,14 @@ namespace GeekShooping.CartApi.Model.Repository
                 CartHeader = await _context.CartHeaders.FirstOrDefaultAsync(c => c.UserId == userId),
             };
             // vai returna detalhe do carrinho e produtos relacionado.
-            cart.CartDetails = _context.CartDetails.Where(c => c.CartHeaderId == cart.CartHeader.Id).Include(c => c.Product);
-           return _mapper.Map<CartVO>(cart);
+            if (cart.CartHeader != null)
+            {
+                cart.CartDetails = _context.CartDetails.Where(c => c.CartHeaderId == cart.CartHeader.Id).Include(c => c.Product);
+                return _mapper.Map<CartVO>(cart);
+            }
+            return _mapper.Map<CartVO>(null);
         }
-
+         
         public async Task<bool> RemoveCoupon(string userId)
         {
             throw new NotImplementedException();
@@ -67,17 +71,21 @@ namespace GeekShooping.CartApi.Model.Repository
             {
                 // removendo o detalhe do carrinho
                 CartDetail cartDetail = await _context.CartDetails.FirstOrDefaultAsync(c => c.Id == cartDetailsId);
-                int total = _context.CartDetails.Where(c => c.CartHeaderId == cartDetailsId).Count();
-
-                _context.CartDetails.Remove(cartDetail);
-                if(total == 1)
                 {
-                    // removendo header do carrinho 
-                    var cartGeaderToRemove = await _context.CartHeaders.FirstOrDefaultAsync(c => c.Id == cartDetailsId);
-                    _context.CartHeaders.Remove(cartGeaderToRemove);
-                    _context.SaveChangesAsync();
+                    int total = _context.CartDetails.Where(c => c.Id == cartDetailsId).Count();
+
+                    _context.CartDetails.Remove(cartDetail);
+
+                    if (total == 1)
+                    {
+                        // removendo header do carrinho 
+                        var cartGeaderToRemove = await _context.CartHeaders.FirstOrDefaultAsync(c => c.Id == cartDetail.CartHeaderId);
+                        _context.CartHeaders.Remove(cartGeaderToRemove);
+                      
+                    }
+                    await _context.SaveChangesAsync();
+                    return true;
                 }
-                return true;
             }
             catch
             {
@@ -106,9 +114,6 @@ namespace GeekShooping.CartApi.Model.Repository
 
             if (cartHeader == null)
             {
-                //Create CartHeader and CartDetails
-                _context.CartHeaders.Add(cart.CartHeader);
-                await _context.SaveChangesAsync();
                 cart.CartDetails.FirstOrDefault().CartHeaderId = cart.CartHeader.Id;
                 cart.CartDetails.FirstOrDefault().Product = null;
                 _context.CartDetails.Add(cart.CartDetails.FirstOrDefault());
