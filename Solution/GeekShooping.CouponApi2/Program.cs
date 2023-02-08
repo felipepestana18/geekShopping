@@ -10,62 +10,63 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 // Configuração do MySql
-    var connection = builder.Configuration["MySQLConnection:MySQLConnectionString"];
-    // necessário criar primeiro na model MySqlContext
-    builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, new MySqlServerVersion(new Version(8, 0, 15))));
-    // necessário criar primeiro na Config AutoMapper
-    // para trasformar VO em mapper
-    IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
-    builder.Services.AddSingleton(mapper);
-    builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+var connection = builder.Configuration["MySQLConnection:MySQLConnectionString"];
+// necessário criar primeiro na model MySqlContext
+builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, new MySqlServerVersion(new Version(8, 0, 15))));
+// necessário criar primeiro na Config AutoMapper
+// para trasformar VO em mapper
+IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+builder.Services.AddSingleton(mapper);
 
-    // necessário está criado primeiro no final colocar no arquivo do program
-    builder.Services.AddScoped<ICouponRepository, CouponRepository>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
+// necessário está criado primeiro no final colocar no arquivo do program
+builder.Services.AddScoped<ICouponRepository, CouponRepository>();
 
-    builder.Services.AddControllers();
+builder.Services.AddControllers();
 
-    // adicionando depois que identity server estive pronto
+// adicionando depois que identity server estive pronto
 
-    builder.Services.AddAuthentication("Bearer")
-        .AddJwtBearer("Bearer", options =>
-        {
-            //pegar a url no projeto identity server 
-            options.Authority = "https://localhost:4435";
-            options.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateAudience = false
-            };
-
-        });
-
-
-    builder.Services.AddAuthorization(options =>
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
     {
-        options.AddPolicy("ApiScope", policy =>
+        //pegar a url no projeto identity server 
+        options.Authority = "https://localhost:4435";
+        options.TokenValidationParameters = new TokenValidationParameters
         {
-            policy.RequireAuthenticatedUser();
-            // é necessario pegar configuraion Scope do Identity Server
-            policy.RequireClaim("scope", "geek_shopping");
-        });
+            ValidateAudience = false
+        };
+
     });
 
-    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-    builder.Services.AddEndpointsApiExplorer();
-    // definido os requisitos de segurança 
-    builder.Services.AddSwaggerGen(c =>
-    {
-        c.EnableAnnotations();
-        c.SwaggerDoc("v1", new OpenApiInfo { Title = "GeelShooping.CartApi" });
-        c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-        {
-            Description = @"Enter 'Bearer' [space] and your token!",
-            Name = "Authorization",
-            In = ParameterLocation.Header,
-            Type = SecuritySchemeType.ApiKey,
-            Scheme = "Bearer"
-        });
 
-        c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ApiScope", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        // é necessario pegar configuraion Scope do Identity Server
+        policy.RequireClaim("scope", "geek_shopping");
+    });
+});
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+// definido os requisitos de segurança 
+builder.Services.AddSwaggerGen(c =>
+{
+    c.EnableAnnotations();
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "GeelShooping.CartApi" });
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = @"Enter 'Bearer' [space] and your token!",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement {
         {
             new OpenApiSecurityScheme
             {
@@ -80,8 +81,8 @@ var builder = WebApplication.CreateBuilder(args);
             },
             new List<string> ()
             }
-        });
     });
+});
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

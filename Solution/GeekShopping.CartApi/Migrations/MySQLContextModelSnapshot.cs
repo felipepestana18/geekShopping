@@ -52,7 +52,6 @@ namespace GeekShooping.CartApi.Migrations
                         .HasColumnName("Id");
 
                     b.Property<string>("CouponCode")
-                        .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("coupon_code");
 
