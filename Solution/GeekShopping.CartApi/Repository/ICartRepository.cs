@@ -11,7 +11,8 @@ namespace GeekShooping.CartApi.Model.Repository
 
         Task<bool> RemoveFromCart(long cartDetailsId);
 
-        Task<bool> ApplyCoupon(string userId, long couponCode);
+        // só fazer quando o microserviço de Coupon estive pronto.
+        Task<bool> ApplyCoupon(string userId, string couponCode);
 
         Task<bool> RemoveCoupon(string userId);
 
