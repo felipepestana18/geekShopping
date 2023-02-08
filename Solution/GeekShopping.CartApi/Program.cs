@@ -19,7 +19,6 @@ builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connecti
 IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 
 // necessário está criado primeiro no final colocar no arquivo do program
 builder.Services.AddScoped<ICartRepository, CartRepository>();

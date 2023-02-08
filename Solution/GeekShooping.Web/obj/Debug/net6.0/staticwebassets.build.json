@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+cqmTNa+9OMU7iYseChoBlUsSGECnOZqpir8hU0YFVw=",
+  "Hash": "LUckNFgKW5EYpTsDBHhM020QQ/pKplosA+qEyqqx3aM=",
   "Source": "GeekShooping.Web",
   "BasePath": "_content/GeekShooping.Web",
   "Mode": "Default",
@@ -117,23 +117,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\geek_shopping.png"
-    },
-    {
-      "Identity": "C:\\Projetos\\geekShopping\\Solution\\GeekShooping.Web\\wwwroot\\images\\order.png",
-      "SourceId": "GeekShooping.Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projetos\\geekShopping\\Solution\\GeekShooping.Web\\wwwroot\\",
-      "BasePath": "_content/GeekShooping.Web",
-      "RelativePath": "images/order.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\order.png"
     },
     {
       "Identity": "C:\\Projetos\\geekShopping\\Solution\\GeekShooping.Web\\wwwroot\\js\\site.js",

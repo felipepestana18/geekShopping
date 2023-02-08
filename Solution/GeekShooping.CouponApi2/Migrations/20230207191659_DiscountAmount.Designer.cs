@@ -28,6 +28,7 @@ namespace GeekShooping.CouponApi.Migrations
                         .HasColumnName("Id");
 
                     b.Property<string>("CouponCode")
+                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("varchar(30)")
                         .HasColumnName("coupon_code");

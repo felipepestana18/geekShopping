@@ -1,6 +1,5 @@
 using GeekShooping.CouponApi.data.ValueObjects;
 using GeekShooping.CouponApi.Repository;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GeekShooping.CouponApi2.Controllers
@@ -19,12 +18,17 @@ namespace GeekShooping.CouponApi2.Controllers
         }
 
         [HttpGet("{couponCode}")]
-        [Authorize]
-        public async Task<ActionResult<CouponVO>> GetCouponByCouponCode(string couponCode)
+        public async Task<ActionResult<CouponVO>> GetCouponByCouponCode(string coupon)
         {
-            var coupon = await _repository.GetCouponByCouponCode(couponCode);
-            if (coupon == null) return NotFound();
-            return Ok(coupon);
+            var result = await _repository.GetCouponByCouponCode(coupon);
+
+            if (result == null)
+                return NotFound();
+            return Ok(result);
+
         }
+
+
+
     }
 }

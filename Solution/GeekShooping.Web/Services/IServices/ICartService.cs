@@ -12,13 +12,12 @@ namespace GeekShooping.Web.Services.IServices
 
         Task<bool> RemoveFromCart(long cartId, string token);
 
-        // implementar só quando o microserviço de coupon estive pronto.
-        Task<bool> ApplyCoupon(CartViewModel cart,  string token);
+        Task<bool> ApplyCoupon(CartViewModel cart, string couponCode, string token);
 
         Task<bool> RemoveCoupon(string userId, string token);
 
         Task<bool> ClearCart(string userId, string token);
 
-        Task<CartHeaderViewModel> Checkout(CartHeaderViewModel cartHeader, string token);
+        Task<bool> Checkout(CartHeaderViewModel cartHeader, string token);
     }
 }
