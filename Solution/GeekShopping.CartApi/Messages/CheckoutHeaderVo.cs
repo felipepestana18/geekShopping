@@ -1,11 +1,10 @@
 ﻿using GeekShooping.CartApi.Data.ValueObjects;
+using GeekShooping.MessageBus;
 
 namespace GeekShooping.CartApi.Messages
 {
-    public class CheckoutHeaderVo
+    public class CheckoutHeaderVo : BaseMessage
     {
-        public long Id { get; set; }
-
         public string UserId { get; set; }
 
         public string CouponCode { get; set; } = string.Empty;

@@ -2,6 +2,7 @@ using AutoMapper;
 using GeekShooping.CartApi.Config;
 using GeekShooping.CartApi.Model.Context;
 using GeekShooping.CartApi.Model.Repository;
+using GeekShooping.CartApi.RabbitMQSender;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -23,6 +24,7 @@ builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttri
 
 // necessário está criado primeiro no final colocar no arquivo do program
 builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddSingleton<IRabbitMQMessageSender, RabbitMQCheckoutConsumer>(); 
 
 builder.Services.AddControllers();
 

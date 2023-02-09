@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\GeekShooping.OrderApi.props" />
+</Project>
