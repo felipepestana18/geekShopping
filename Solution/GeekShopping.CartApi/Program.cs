@@ -24,9 +24,14 @@ builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttri
 
 // necessário está criado primeiro no final colocar no arquivo do program
 builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<ICouponRepository, CouponRepository>();
 builder.Services.AddSingleton<IRabbitMQMessageSender, RabbitMQCheckoutConsumer>(); 
 
 builder.Services.AddControllers();
+
+// para consumir um microserviço da aplicação
+builder.Services.AddHttpClient<ICouponRepository, CouponRepository>(s => s.BaseAddress =
+                new Uri(builder.Configuration["ServiceUrls:CouponAPI"]));
 
 // adicionando depois que identity server estive pronto
 
